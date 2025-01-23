@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  padding-bottom: 12px;
+  padding-bottom: 20px;
   border-bottom: 0.5px solid grey;
 }
 
@@ -34,11 +34,19 @@ header {
   border: 2px solid none;
 }
 
+.weatherToday {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 15px 46px 15px;
+}
+
 .cityName {
   font-size: 40px;
 }
 
 .currentTemp {
+  display: flex;
+  align-items: center;
   font-size: 45px;
 }
 
@@ -53,6 +61,6 @@ header {
 }
 
 footer {
-  padding-top: 12px;
+  padding-top: 16px;
   border-top: 0.5px solid grey;
 }
