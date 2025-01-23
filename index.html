@@ -3,34 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>ELTIEMPO</title>
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <header>
-      <form>
-        <input type="text" placeholder="Enter a city / locale name" required />
-        <input type="submit" value="SEARCH" />
-      </form>
-    </header>
-    <main>
-      <div>
-        Málaga <br />
-        Wednesday 11:32, mostly sunny <br />
-        wind speed 6 km/hr, humidity 36%
-      </div>
-      <div>🌤️18ºC</div>
-    </main>
-    <footer>
-      This app has been coded by
-      <a href="https://github.com/MLPEKPAR" target="_blank"
-        >María Luisa Rodriguez</a
-      >
-      and is on
-      <a href="https://github.com/MLPEKPAR/ELTIEMPO" target="_blank">Github</a>
-      and hosted by
-      <a href="https://tianqi-weather.netlify.app/" target="_blank">Netlify </a>
-    </footer>
-    <script src="src/script.js"></script>
+    <div class="cuadro">
+      <header>
+        <form>
+          <input
+            type="text"
+            placeholder="Enter a city / locale name"
+            required
+          />
+          <input type="submit" value="SEARCH" />
+        </form>
+      </header>
+      <main>
+        <div>
+          <div class="cityName">Málaga</div>
+          Wednesday 11:32, mostly sunny <br />
+          wind speed <span class="windSpeed">6 km/hr</span>, humidity
+          <span class="humidity">36%</span>
+        </div>
+        <div class="currentTemp">🌤️18ºC</div>
+      </main>
+      <footer>
+        This app has been coded by
+        <a href="https://github.com/MLPEKPAR" target="_blank"
+          >María Luisa Rodriguez</a
+        >
+        and is on
+        <a href="https://github.com/MLPEKPAR/ELTIEMPO" target="_blank"
+          >Github</a
+        >
+        and hosted by
+        <a href="https://tianqi-weather.netlify.app/" target="_blank"
+          >Netlify
+        </a>
+      </footer>
+      <script src="src/script.js"></script>
+    </div>
   </body>
 </html>

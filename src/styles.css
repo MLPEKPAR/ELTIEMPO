@@ -1,0 +1,39 @@
+.cuadro {
+  margin: 50px 50px auto 50px;
+  border: 2px solid none;
+  border-radius: 12px;
+  padding: 25px;
+  background: white;
+}
+
+body {
+  background-color: #eac0f2;
+}
+
+header {
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid grey;
+}
+
+.cityName {
+  font-size: 40px;
+}
+
+.currentTemp {
+  font-size: 45px;
+}
+
+.windSpeed {
+  color: red;
+  font-weight: bold;
+}
+
+.humidity {
+  color: red;
+  font-weight: bold;
+}
+
+footer {
+  padding-top: 12px;
+  border-top: 0.5px solid grey;
+}
