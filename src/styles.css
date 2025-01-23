@@ -1,3 +1,6 @@
+body {
+  background-color: #eac0f2;
+}
 .cuadro {
   margin: 80px auto;
   max-width: 600px;
@@ -7,13 +10,28 @@
   background: white;
 }
 
-body {
-  background-color: #eac0f2;
-}
-
 header {
   padding-bottom: 12px;
   border-bottom: 0.5px solid grey;
+}
+
+.enterCity {
+  line-height: 25px;
+  padding-left: 5px;
+  padding-right: 325px;
+  border-radius: 8px;
+  border: 2px solid #eac0f2;
+}
+
+.submit {
+  font-weight: bold;
+  color: white;
+  background-color: #cd60e2;
+  line-height: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 8px;
+  border: 2px solid none;
 }
 
 .cityName {
