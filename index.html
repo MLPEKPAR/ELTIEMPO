@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELTIEMPO</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="cuadro">
@@ -22,12 +23,18 @@
       <main>
         <div class="weatherToday">
           <div>
-            <h1 class="cityName" id="cityName">Málaga</h1>
-            Wednesday 11:32, mostly sunny <br />
-            wind speed <span class="windSpeed">6 km/hr</span>, humidity
-            <span class="humidity">36%</span>
+            <h1 class="city-name" id="city-name">Málaga</h1>
+            <span id="current-date-time"></span>,
+            <span id="description"></span> <br />
+            wind speed <span class="wind-speed" id="wind-speed">6 km/hr</span>,
+            humidity
+            <span class="humidity" id="humidity">36%</span>
           </div>
-          <div class="currentTemp" id="currentTemp">🌤️18ºC</div>
+          <div class="currentTemp" id="currentTemp">
+            <span id="current-icon">🌤️</span>
+            <span id="current-temperature">18º</span>
+            <span id="current-unit">C</span>
+          </div>
         </div>
       </main>
       <footer>
