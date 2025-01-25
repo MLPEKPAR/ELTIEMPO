@@ -12,7 +12,8 @@
       <header>
         <form>
           <input
-            class="enterCity"
+            class="enter-city"
+            id="enter-city"
             type="text"
             placeholder="Enter a city / locale name"
             required
@@ -24,16 +25,17 @@
         <div class="weatherToday">
           <div>
             <h1 class="city-name" id="city-name">Málaga</h1>
-            <span id="current-date-time"></span>,
-            <span id="description"></span> <br />
+            <span id="current-date-time">Saturday 17:17</span>,
+            <span id="description">mostly cloudy</span> <br />
             wind speed <span class="wind-speed" id="wind-speed">6 km/hr</span>,
-            humidity
-            <span class="humidity" id="humidity">36%</span>
+            humidity <span class="humidity" id="humidity">36%</span>
           </div>
-          <div class="currentTemp" id="currentTemp">
-            <span id="current-icon">🌤️</span>
-            <span id="current-temperature">18º</span>
-            <span id="current-unit">C</span>
+          <div class="current-temp" id="current-temp">
+            <span class="current-icon" id="current-icon">🌤️</span>
+            <span class="current-temperature" id="current-temperature"
+              >18º</span
+            >
+            <div class="current-unit" id="current-unit">C</div>
           </div>
         </div>
       </main>

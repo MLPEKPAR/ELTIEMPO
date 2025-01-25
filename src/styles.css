@@ -15,42 +15,45 @@ header {
   border-bottom: 0.5px solid grey;
 }
 
-.enterCity {
-  line-height: 25px;
+.enter-city {
+  line-height: 35px;
   padding-left: 5px;
-  padding-right: 325px;
+  padding-right: 275px;
+  margin-right: 5px;
   border-radius: 8px;
   border: 2px solid #eac0f2;
+  font-size: 17px;
 }
 
 .submit {
   font-weight: bold;
   color: white;
+  font-size: 17px;
   background-color: #cd60e2;
-  line-height: 25px;
+  line-height: 37px;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 8px;
-  border: 2px solid none;
+  border: none;
 }
 
 .weatherToday {
   display: flex;
   justify-content: space-between;
-  padding: 20px 15px 46px 15px;
+  padding: 20px 20px 46px 20px;
 }
 
-.cityName {
-  font-size: 40px;
+.city-name {
+  font-size: 45px;
 }
 
-.currentTemp {
+.current-temp {
   display: flex;
   align-items: center;
   font-size: 45px;
 }
 
-.windSpeed {
+.wind-speed {
   color: red;
   font-weight: bold;
 }
@@ -60,6 +63,21 @@ header {
   font-weight: bold;
 }
 
+.current-icon {
+  font-size: 35px;
+}
+
+.current-temperature {
+  font-size: 60px;
+}
+
+.current-unit {
+  align-self: flex-start;
+  margin-top: 47px;
+  margin-left: 5px;
+  font-size: 33px;
+  font-weight: bold;
+}
 footer {
   padding-top: 16px;
   border-top: 0.5px solid grey;
