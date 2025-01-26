@@ -35,17 +35,36 @@ function displaySearchResults(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = response.data.wind.speed;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.temperature.humidity;
-  let iconElement = document.innerHTML("#current-icon");
+  humidityElement.innerHTML = `${Math.round(
+    response.data.temperature.humidity
+  )} %`;
+  let iconElement = document.querySelector("#current-icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" />`;
-  let currenTempElement = document.querySelector("#current-temperature");
-  currenTempElement = response.data.temperture.current;
+  let temperatureElement = document.querySelector("#current-temp");
+  temperatureElement.innerHTML = `${Math.round(
+    response.data.temperature.current
+  )}`;
+  let unitElement = document.querySelector("#current-unit");
+  unitElement.innerHTML = "ºC";
 }
 
-let apiKey = "11edc9a3d0f3o475000at9446642fb9a";
-let unit = "metric";
-let query = document.querySelector("#enter-city");
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=${unit}`;
-axios.get(apiUrl).then(displaySearchResults);
+function searchCity(city) {
+  let apiKey = "11edc9a3d0f3o475000at9446642fb9a";
+  let unit = "metric";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=${unit}`;
+  axios.get(apiUrl).then(displaySearchResults);
+}
+
+function handleSearch(event) {
+  event.preventDefault();
+  let searchInput = document.querySelector("#enter-city");
+  let city = searchInput.value;
+
+  searchCity(city);
+}
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSearch);
+searchCity("Málaga");

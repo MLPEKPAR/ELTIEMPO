@@ -47,12 +47,6 @@ header {
   font-size: 45px;
 }
 
-.current-temp {
-  display: flex;
-  align-items: center;
-  font-size: 45px;
-}
-
 .wind-speed {
   color: red;
   font-weight: bold;
@@ -63,11 +57,16 @@ header {
   font-weight: bold;
 }
 
+.current-condition {
+  display: flex;
+  align-items: center;
+}
+
 .current-icon {
   font-size: 35px;
 }
 
-.current-temperature {
+.current-temp {
   font-size: 60px;
 }
 
