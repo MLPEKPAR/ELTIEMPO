@@ -8,11 +8,12 @@ body {
   border-radius: 12px;
   padding: 35px 25px 25px 25px;
   background: white;
+  box-shadow: 20px -15px 20px 8px rgb(235, 235, 94, 0.5);
 }
 
 header {
   padding-bottom: 30px;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.5px solid rgb(128, 128, 128, 0.4);
 }
 
 .enter-city {
@@ -35,6 +36,10 @@ header {
   padding-right: 10px;
   border-radius: 8px;
   border: none;
+}
+
+form.submit :hover {
+  cursor: pointer;
 }
 
 .weatherToday {
@@ -85,6 +90,6 @@ header {
 }
 footer {
   padding-top: 24px;
-  border-top: 0.5px solid grey;
+  border-top: 0.5px solid rgb(128, 128, 128, 0.4);
   text-align: center;
 }
