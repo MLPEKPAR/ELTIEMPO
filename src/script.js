@@ -1,37 +1,12 @@
-// day and time permanently updated
-
-function displayCurrentDate(date) {
-  let day = date.getDay();
-  let Days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  formattedDay = Days[date.getDay()];
-  let hour = date.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-  return `${formattedDay}, ${hour}:${minutes}`;
-}
-
-let dateElement = document.querySelector("#current-date-time");
-let newDate = new Date();
-dateElement.innerHTML = displayCurrentDate(newDate);
-
 // import API data
 
 function displaySearchResults(response) {
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = response.data.city;
+
+  let localTimeElement = document.querySelector("#current-date-time");
+  let date = new Date(response.data.time * 1000);
+  localTimeElement.innerHTML = displayCurrentDate(date);
 
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.condition.description;
@@ -49,6 +24,32 @@ function displaySearchResults(response) {
   )}`;
   let unitElement = document.querySelector("#current-unit");
   unitElement.innerHTML = "ºC";
+}
+
+// day and time permanently updated
+
+function displayCurrentDate(date) {
+  let day = date.getDay();
+  let Days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  formattedDay = Days[date.getDay()];
+
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${formattedDay}, ${hour}:${minutes}`;
 }
 
 function searchCity(city) {
