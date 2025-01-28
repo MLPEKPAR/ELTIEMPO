@@ -6,14 +6,14 @@ body {
   max-width: 600px;
   border: 2px solid none;
   border-radius: 12px;
-  padding: 35px 25px 25px 25px;
+  padding: 35px 25px 10px 25px;
   background: white;
-  box-shadow: 20px -15px 20px 8px rgb(235, 235, 94, 0.5);
+  box-shadow: 15px 10px 20px 8px rgb(235, 235, 94, 0.5);
 }
 
 header {
   padding-bottom: 30px;
-  border-bottom: 0.5px solid rgb(128, 128, 128, 0.4);
+  border-bottom: 0.5px solid rgb(128, 128, 128, 0.2);
 }
 
 .enter-city {
@@ -38,20 +38,19 @@ header {
   border: none;
 }
 
-form.submit :hover {
-  cursor: pointer;
+main {
+  padding-bottom: 15px;
+  font-family: "Alef", serif;
 }
-
 .weatherToday {
   display: flex;
   justify-content: space-between;
-  padding: 20px 20px 46px 20px;
-  font-family: "Alef", serif;
+  padding: 20px;
 }
 
 .city-name {
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 45px;
 }
 
@@ -88,8 +87,34 @@ form.submit :hover {
   font-size: 33px;
   font-weight: bold;
 }
+
+.forecast {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 36px;
+  font-size: 18px;
+}
+
+.forecast-day {
+  text-align: center;
+}
+
+.day-name {
+  font-weight: bold;
+}
+
+.day-temp {
+  display: flex;
+}
+
+.max {
+  padding-right: 8px;
+  font-weight: bold;
+  color: red;
+}
 footer {
   padding-top: 24px;
-  border-top: 0.5px solid rgb(128, 128, 128, 0.4);
+  border-top: 0.5px solid rgb(128, 128, 128, 0.2);
   text-align: center;
 }
