@@ -69,4 +69,33 @@ function handleSearch(event) {
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSearch);
+
 searchCity("Málaga");
+
+// Adding 5-day weather forecast
+
+function showForecast(day) {
+  let FiveDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastFive = ""; // var permite "acumular" resultados del loop
+
+  FiveDays.forEach(function (day) {
+    //atención aquí al orden paréntesis y llaves
+    forecastFive =
+      forecastFive +
+      `
+  <div class="forecast-day">
+    <div class="day-name">${day}</div>
+    <div class="day-icon">🌤️</div>
+    <div class="day-temp">
+      <div class="max">15º</div>
+      <div class="min">9º</div>
+    </div>
+  </div>
+`;
+  });
+
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastFive;
+}
+
+showForecast();
