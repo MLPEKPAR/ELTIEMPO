@@ -24,6 +24,8 @@ function displaySearchResults(response) {
   )}`;
   let unitElement = document.querySelector("#current-unit");
   unitElement.innerHTML = "ºC";
+
+  obtainForecast(response.data.city);
 }
 
 // day and time permanently updated
@@ -72,30 +74,44 @@ searchForm.addEventListener("submit", handleSearch);
 
 searchCity("Málaga");
 
-// Adding 5-day weather forecast
+// Adding 5-day weather forecast and integrating API for real time data
 
-function showForecast(day) {
-  let FiveDays = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function obtainForecast(city) {
+  let apiKey = "11edc9a3d0f3o475000at9446642fb9a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function formatForecastDay(timestamp) {
+  let forecastDate = new Date(timestamp * 1000);
+  let forecastDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return forecastDay[forecastDate.getDay()];
+}
+
+function displayForecast(response) {
   let forecastFive = ""; // var permite "acumular" resultados del loop
 
-  FiveDays.forEach(function (day) {
+  response.data.daily.forEach(function (day, index) {
     //atención aquí al orden paréntesis y llaves
-    forecastFive =
-      forecastFive +
-      `
+    if (index < 5) {
+      forecastFive =
+        forecastFive +
+        `
   <div class="forecast-day">
-    <div class="day-name">${day}</div>
-    <div class="day-icon">🌤️</div>
+    <div class="day-name">${formatForecastDay(day.time)}</div>
+    <div ><img src=${day.condition.icon_url} class="day-icon"/></div>
     <div class="day-temp">
-      <div class="max">15º</div>
-      <div class="min">9º</div>
+      <div class="max">${Math.round(day.temperature.maximum)}º</div>
+      <div class="min">${Math.round(day.temperature.minimum)}º</div>
     </div>
   </div>
 `;
+    }
   });
 
   let forecast = document.querySelector("#forecast");
   forecast.innerHTML = forecastFive;
 }
 
-showForecast();
+displayForecast();

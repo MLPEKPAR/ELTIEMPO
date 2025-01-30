@@ -73,10 +73,6 @@ main {
   align-items: center;
 }
 
-.current-icon {
-  font-size: 33px;
-}
-
 .current-temp {
   align-self: flex-start;
   margin-top: 16px;
@@ -110,13 +106,14 @@ main {
 
 .day-temp {
   display: flex;
+  justify-content: space-around;
 }
 
 .max {
-  padding-right: 8px;
   font-weight: bold;
   color: red;
 }
+
 footer {
   padding-top: 24px;
   border-top: 0.5px solid rgb(128, 128, 128, 0.2);
