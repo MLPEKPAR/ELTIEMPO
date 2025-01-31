@@ -5,6 +5,7 @@ body {
     rgb(207, 211, 236) 100.2%
   );
 }
+
 .cuadro {
   margin: 60px auto;
   max-width: 600px;
@@ -74,8 +75,9 @@ main {
 }
 
 .current-icon {
-  width: 125%;
+  width: 120%;
 }
+
 .current-temp {
   align-self: flex-start;
   margin-top: 16px;
