@@ -2,27 +2,26 @@
 
 function displaySearchResults(response) {
   let cityElement = document.querySelector("#city-name");
-  cityElement.innerHTML = response.data.city;
-
   let localTimeElement = document.querySelector("#current-date-time");
   let date = new Date(response.data.time * 1000);
-  localTimeElement.innerHTML = displayCurrentDate(date);
-
   let descriptionElement = document.querySelector("#description");
-  descriptionElement.innerHTML = response.data.condition.description;
   let windElement = document.querySelector("#wind-speed");
-  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   let humidityElement = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#current-icon");
+  let temperatureElement = document.querySelector("#current-temp");
+  let unitElement = document.querySelector("#current-unit");
+
+  cityElement.innerHTML = response.data.city;
+  localTimeElement.innerHTML = displayCurrentDate(date);
+  descriptionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   humidityElement.innerHTML = `${Math.round(
     response.data.temperature.humidity
   )} %`;
-  let iconElement = document.querySelector("#current-icon");
-  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" />`;
-  let temperatureElement = document.querySelector("#current-temp");
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="current-icon" />`;
   temperatureElement.innerHTML = `${Math.round(
     response.data.temperature.current
   )}`;
-  let unitElement = document.querySelector("#current-unit");
   unitElement.innerHTML = "ºC";
 
   obtainForecast(response.data.city);
@@ -51,7 +50,7 @@ function displayCurrentDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${formattedDay}, ${hour}:${minutes}`;
+  return `${formattedDay} ${hour}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -90,10 +89,9 @@ function formatForecastDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecastFive = ""; // var permite "acumular" resultados del loop
+  let forecastFive = "";
 
   response.data.daily.forEach(function (day, index) {
-    //atención aquí al orden paréntesis y llaves
     if (index < 5) {
       forecastFive =
         forecastFive +
